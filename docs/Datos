@@ -1,0 +1,26 @@
+SELECT * FROM  IGLESIA;
+
+INSERT INTO IGLESIA VALUES(1,'Ibb Puente Piedra','Av. Buenos Aires','',
+'','','','1',126014119);
+INSERT INTO IGLESIA VALUES(2,'Ibb Pachacutec','Av. Buenos Aires','',
+'','','','1',126014119);
+
+SELECT * FROM SERVICIO;
+
+INSERT INTO SERVICIO VALUES(1,'Miercoles','7:30 - 9:00 pm','Miercoles de Poder');
+INSERT INTO SERVICIO VALUES(2,'Sabado','4:30 - 7:00 pm','Pre Via');
+INSERT INTO SERVICIO VALUES(3,'Sabado','4:30 - 7:00 pm','Adolecentes');
+INSERT INTO SERVICIO VALUES(4,'Sabado','7:00 - 9:00 pm','REM');
+INSERT INTO SERVICIO VALUES(5,'Sabado','7:00 - 9:00 pm','JCC');
+INSERT INTO SERVICIO VALUES(6,'Domingo','7:00 - 8:30 am','1er culto mañana');
+INSERT INTO SERVICIO VALUES(7,'Domingo','8:30 - 10:00 am','2do culto mañana');
+INSERT INTO SERVICIO VALUES(8,'Domingo','10:00 - 11:30 am','3er culto mañana');
+INSERT INTO SERVICIO VALUES(9,'Domingo','11:30 - 1:00 pm','4to culto mañana');
+INSERT INTO SERVICIO VALUES(10,'Domingo','6:30 - 8:00 pm','Culto Noche');
+
+
+SELECT * FROM PERSONA;
+
+INSERT INTO PERSONA VALUES(1,'Anibal','Copitan','Norabuena','','','','','','','','','','',1,126014119);
+
+SELECT * FROM USUARIO;
