@@ -11,5 +11,6 @@ vendor/bin
 
 # config anibal
 composer.phar
-zftool.phar
+vendor/*.*
+
 
