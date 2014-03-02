@@ -9,8 +9,8 @@ nbproject
 composer.lock
 vendor/bin
 
-# config anibal
+#config anibal
 composer.phar
-vendor/*.*
+vendor/*
 
 
