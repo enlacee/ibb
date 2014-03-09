@@ -7,7 +7,7 @@ return array(
     ),
     'router' => array(
         'routes' => array(
-            'ZendSkeletonModule' => array(
+            'Zend-Skeleton-Module' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module
