@@ -4,7 +4,9 @@ return array(
         'invokables' => array(
             'Persona\Controller\Index' => 'Persona\Controller\IndexController',
         ),
-    ),
+    ), 
+    // http://localhost/iglesia-bb/public/persona/index/123
+    // http://localhost/iglesia-bb/public/persona/index/123/enlacee-
     'router' => array(
         'routes' => array(
             'Persona' => array(
@@ -13,8 +15,6 @@ return array(
                     // Change this to something specific to your module
                     'route'    => '/persona',
                     'defaults' => array(
-                        // Change this value to reflect the namespace in which
-                        // the controllers for your module are found
                         '__NAMESPACE__' => 'Persona\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
@@ -22,25 +22,32 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    // This route is a sane default when developing a module;
-                    // as you solidify the routes for your module, however,
-                    // you may want to remove it and replace it with more
-                    // specific routes.
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
+                            'route' => '/:controller[/:action][/:id][/:nick]', // router opcional (op1)
+                            //'route' => '/[:controller[/:action][/:id][/:nick]]', // router opcional (op2)
+                            //'route'    => '/[:controller[/:action][/:id/:nick]]', // router obligatorio [id/nick]
                             'constraints' => array(
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9][0-9]*',
+                                'nick' => '[a-z][a-z_-]*'
                             ),
                             'defaults' => array(
+                                'controller' => 'persona',
+                                'action' => 'index',
+                                'id' => '111',
+                                'nick' => 'anibal'
                             ),
                         ),
                     ),
                 ),
             ),
         ),
+
+
+
     ),
     'view_manager' => array(
         'template_path_stack' => array(
