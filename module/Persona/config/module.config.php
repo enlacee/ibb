@@ -44,6 +44,30 @@ return array(
                     ),
                 ),
             ),
+            'q' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/q',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Persona\Controller',
+                        'controller'    => 'Index',
+                        'action'        => 'search',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route' => '[/:keywords]', // router opcional (op1)
+                            'constraints' => array(
+                                'keywords' => '[a-zA-Z][a-zA-Z0-9_-]*'
+                            ),
+                        ),
+                    ),
+                ),
+            ),            
+            
         ),
 
 
