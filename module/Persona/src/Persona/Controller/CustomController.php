@@ -14,6 +14,6 @@ class CustomController extends AbstractActionController
     
     public function __construct()
     {
-        echo "  ".__CLASS__;
+
     }
 }

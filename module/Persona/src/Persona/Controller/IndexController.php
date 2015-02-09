@@ -10,10 +10,10 @@ class IndexController extends CustomController
         //var_dump($p);exit;
         
         $viewHelperManager = $this->getServiceLocator()->get('ViewHelperManager');
-        $hashids = $viewHelperManager->get('hashids'); // $escapeHtml can be called as function because of its __invoke method       
+        $hashids = $viewHelperManager->get('hashids');     
         $escapedVal = $hashids->encode(12);
 
-        var_dump($escapedVal);
+        
         return array();
     }
 
