@@ -2,14 +2,18 @@
 
 namespace Persona\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
-
-class IndexController extends AbstractActionController
+class IndexController extends CustomController
 {
     public function indexAction()
     {
         $p = $this->params()->fromRoute();
-        var_dump($p);exit;
+        //var_dump($p);exit;
+        
+        $viewHelperManager = $this->getServiceLocator()->get('ViewHelperManager');
+        $hashids = $viewHelperManager->get('hashids'); // $escapeHtml can be called as function because of its __invoke method       
+        $escapedVal = $hashids->encode(12);
+
+        var_dump($escapedVal);
         return array();
     }
 

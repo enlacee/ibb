@@ -9,8 +9,14 @@ namespace Persona;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+// helper
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\ViewHelperProviderInterface;    
 
-class Module implements AutoloaderProviderInterface
+class Module implements 
+    AutoloaderProviderInterface,
+    ConfigProviderInterface, 
+    ViewHelperProviderInterface
 {
     public function getAutoloaderConfig()
     {
@@ -31,4 +37,18 @@ class Module implements AutoloaderProviderInterface
     {
         return include __DIR__ . '/config/module.config.php';
     }
+    
+    // add helper
+    public function getViewHelperConfig()
+    {
+        return array(
+            'factories' => array(
+                'hashids' => function($sm) {
+                    $helper = new View\Helper\HashidsHelper() ;
+                    return $helper;
+                }
+            )
+        );   
+   }    
 }
+

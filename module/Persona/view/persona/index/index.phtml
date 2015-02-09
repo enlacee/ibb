@@ -1,3 +1,16 @@
 <strong>Module:</strong>        Persona &raquo;
 <strong>Controller:</strong>    Index &raquo;
 <strong>Action:</strong>        index
+<hr>
+Anibal
+<hr>
+
+<?php
+//$code = $this->getHelper('hashids')->encode(11);
+$hash =  $this->hashids()->encode(12);
+var_dump($hash);
+echo "<br>";
+var_dump($this->hashids()->decode($hash));
+echo "<br>";
+var_dump($this->plugin("hashids")->encode(12));
+?>

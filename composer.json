@@ -10,5 +10,8 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.2.*"
+    },
+    "require-dev": {
+        "hashids/hashids": "1.0.0"  
     }
 }
