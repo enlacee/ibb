@@ -1,13 +1,14 @@
 <?php
-
 namespace Persona\Controller;
 
-class IndexController extends CustomController
+use Zend\Mvc\Controller\AbstractActionController;
+
+class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
         $p = $this->params()->fromRoute();
-        //var_dump($p);exit;
+        var_dump($this->settings());
         
         $viewHelperManager = $this->getServiceLocator()->get('ViewHelperManager');
         $hashids = $viewHelperManager->get('hashids');     

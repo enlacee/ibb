@@ -3,8 +3,13 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Persona\Controller\Index' => 'Persona\Controller\IndexController',
-        ),
-    ), 
+        ),       
+    ),
+    'controller_plugins' => array(
+        'invokables' => array(
+            'settings' => 'Persona\Controller\Plugin\Settings',
+        )
+    ),    
     // http://localhost/iglesia-bb/public/persona/index/123
     // http://localhost/iglesia-bb/public/persona/index/123/enlacee-
     'router' => array(
@@ -78,4 +83,17 @@ return array(
             'Persona' => __DIR__ . '/../view',
         ),
     ),
+    
+    'settings' => array(
+        'myApi' => 'htt://api.paypal.com'
+    ),
+    
+    'rest_domain' => 'http://asiste.app',
+    'api_ubigeos' => 'http://asiste.app/engines/ubigeos',
+    'api_especialities' => 'http://asiste.app/engines/especialities',
+    'api_profile_searchs' => 'http://asiste.app/engines/profile_searchs',
+    'api_departments' => 'http://asiste.app/engines/departments',
+    'api_provinces' => 'http://asiste.app/engines/provinces',
+    'api_districts' => 'http://asiste.app/engines/districts',
+    'api_searchs' => 'http://asiste.app/engines/searchs',    
 );
