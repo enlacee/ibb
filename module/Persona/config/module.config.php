@@ -82,6 +82,9 @@ return array(
         'template_path_stack' => array(
             'Persona' => __DIR__ . '/../view',
         ),
+        'strategies' => array(
+           'ViewJsonStrategy',
+        ),         
     ),
     
     'settings' => array(
